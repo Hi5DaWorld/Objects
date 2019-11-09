@@ -1,0 +1,68 @@
+public class Main
+{
+	public static hammer hammertoy = new hammer(0,"toy hammer",1);
+	public static screwdriver screwdriverthing = new screwdriver(0,"allen key",1);
+	public static void main(String[] args) {
+	    System.out.println(hammertoy.getType());
+	    hammertoy.hitSomething();
+	    System.out.println(screwdriverthing.getType());
+	    screwdriverthing.screwSomething();
+	}
+}
+
+//tool class
+
+public class tool{
+    private String type;
+    private int toolboxLocation;
+    public tool(String type, int toolboxLocation){
+        this.type = type;
+        this.toolboxLocation = toolboxLocation;
+        
+    }
+    
+    public void setLocation(int location){
+        this.toolboxLocation = location;
+    }
+    public String getType(){
+        return this.type;
+    }
+    public int getLocation(){
+        return this.toolboxLocation;
+    }
+    
+}
+
+//hammer
+
+public class hammer extends tool{
+    
+    public int weight;
+    
+    public hammer(int location, String value, int weight){
+        super(value,location);
+        this.weight = weight;
+    }
+    
+    public void hitSomething(){
+        System.out.println("Bang!");
+    }
+}
+
+
+//screwdriver
+
+
+public class screwdriver extends tool{
+    
+    public int sharpness;
+    
+    public screwdriver(int location, String value, int head){
+        super(value,location);
+        this.sharpness = sharpness;
+    }
+    
+    public void screwSomething(){
+        System.out.println("*insert drill sounds*");
+    }
+}
