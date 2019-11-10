@@ -1,7 +1,8 @@
 public class Main
 {
-	public static hammer hammertoy = new hammer(0,"toy hammer",1);
-	public static screwdriver screwdriverthing = new screwdriver(0,"allen key",1);
+	public static hammer hammertoy = new hammer(hammer.HEAVEE,"toy hammer",hammer.Stanley20OunceFatMaxXtremeClaw);
+	public static screwdriver screwdriverthing = new screwdriver(screwdriver.LONGG,"allen key",screwdriver.FILLIPS);
+	
 	public static void main(String[] args) {
 	    System.out.println(hammertoy.getType());
 	    hammertoy.hitSomething();
@@ -37,6 +38,15 @@ public class tool{
 
 public class hammer extends tool{
     
+    public static final int DEDBLO = 0;
+    public static final int ORANGE = 1;
+    public static final int TOY = 2;
+    public static final int Stanley20OunceFatMaxXtremeClaw = 3;
+    
+    public static final int HEAVEE = 100; //cm
+    public static final int MED = 99;
+    public static final int LITE = 2;
+    
     public int weight;
     
     public hammer(int location, String value, int weight){
@@ -49,17 +59,25 @@ public class hammer extends tool{
     }
 }
 
-
 //screwdriver
 
 
 public class screwdriver extends tool{
     
-    public int sharpness;
+    public static final int FILLIPS = 0;
+    public static final int ROBBERTSON = 1;
+    public static final int UNFLATHEAD = 2;
+    public static final int TORKS = 3;
     
-    public screwdriver(int location, String value, int head){
+    public static final int LONGG = 100; //cm
+    public static final int MEDIUM = 99;
+    public static final int SMUL = 2;
+    
+    public int style;
+    
+    public screwdriver(int location, String value, int style){
         super(value,location);
-        this.sharpness = sharpness;
+        this.style = style;
     }
     
     public void screwSomething(){
